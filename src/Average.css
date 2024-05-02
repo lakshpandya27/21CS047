@@ -1,4 +1,31 @@
-*{
-    background-color: rgb(186, 191, 191);
-}
-
+.average-calculator-container {
+    background: linear-gradient(to bottom right, #f0f0f0, #ffffff);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  select, button {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .result-container {
+    margin-top: 20px;
+  }
+  
+  .result-container h2 {
+    margin: 10px 0;
+  }
+  
