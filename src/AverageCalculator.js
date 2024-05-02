@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import './Average.css'; // Import CSS file for styling
+import jsonData from './sample.json'; // Import JSON data file
 
 function AverageCalculator() {
   const [numberType, setNumberType] = useState('');
@@ -8,31 +9,24 @@ function AverageCalculator() {
   const [windowPrevState, setWindowPrevState] = useState([]);
   const [windowCurrState, setWindowCurrState] = useState([]);
 
-  const fetchNumbers = async () => {
-    try {
-      const response = await axios.get(`http://localhost:3000/numbers/${numberType}`);
-      const { windowPrevState, windowCurrState, numbers, avg } = response.data;
-      setNumbers(numbers);
-      setAverage(avg);
-      setWindowPrevState(windowPrevState);
-      setWindowCurrState(windowCurrState);
-    } catch (error) {
-      console.error('Error fetching numbers:', error.message);
-    }
+  const fetchData = (type) => {
+    const data = jsonData[type];
+    setNumbers(data.numbers);
+    setAverage(data.avg);
+    setWindowPrevState(data.windowPrevState);
+    setWindowCurrState(data.windowCurrState);
   };
 
   return (
-    <div>
+    <div className="average-calculator-container">
       <h1>Average Calculator</h1>
       <select value={numberType} onChange={(e) => setNumberType(e.target.value)}>
         <option value="">Select Number Type</option>
-        <option value="p">Prime</option>
-        <option value="f">Fibonacci</option>
-        <option value="e">Even</option>
-        <option value="r">Random</option>
+        <option value="firstResponse">First Response</option>
+        <option value="secondResponse">Second Response</option>
       </select>
-      <button onClick={fetchNumbers}>Fetch Numbers</button>
-      <div>
+      <button onClick={() => fetchData(numberType)}>Fetch Numbers</button>
+      <div className="result-container">
         <h2>Previous State: {windowPrevState.join(', ')}</h2>
         <h2>Current State: {windowCurrState.join(', ')}</h2>
         <h2>Numbers: {numbers.join(', ')}</h2>
