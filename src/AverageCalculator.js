@@ -22,8 +22,9 @@ function AverageCalculator() {
       <h1>Average Calculator</h1>
       <select value={numberType} onChange={(e) => setNumberType(e.target.value)}>
         <option value="">Select Number Type</option>
-        <option value="firstResponse">First Response</option>
-        <option value="secondResponse">Second Response</option>
+        <option value="odd">Odd</option>
+        <option value="even">Even</option>
+        <option value="average">Average</option>
       </select>
       <button onClick={() => fetchData(numberType)}>Fetch Numbers</button>
       <div className="result-container">
