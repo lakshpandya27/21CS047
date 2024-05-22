@@ -11,5 +11,25 @@
       "numbers": [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30],
       "avg": 23.40
     }
+  ,
+  
+    "odd": {
+      "windowPrevState": [1, 3, 5],
+      "windowCurrState": [7, 9, 11],
+      "numbers": [1, 3, 5, 7, 9, 11],
+      "avg": 6.00
+    },
+    "even": {
+      "windowPrevState": [2, 4, 6],
+      "windowCurrState": [8, 10, 12],
+      "numbers": [2, 4, 6, 8, 10, 12],
+      "avg": 7.00
+    },
+    "average": {
+      "windowPrevState": [1, 2, 3, 4],
+      "windowCurrState": [5, 6, 7, 8],
+      "numbers": [1, 2, 3, 4, 5, 6, 7, 8],
+      "avg": 4.50
+    }
   }
   
